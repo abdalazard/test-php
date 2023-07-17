@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'vinicius/testes',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '4f763b69f7d163749c2a99d5d52a7ea605fffe83',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -263,9 +263,9 @@
             'dev_requirement' => true,
         ),
         'vinicius/testes' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '4f763b69f7d163749c2a99d5d52a7ea605fffe83',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
