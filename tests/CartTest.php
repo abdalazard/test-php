@@ -14,20 +14,22 @@ class CartTest extends TestCase
         $this->assertEmpty($cart->getCart());
     }
 
-    public function test_if_exist_product_in_cart(){
+    public function test_if_exist_product_in_cart()
+    {
         $products = new Products;
-        $products->setName('Isqueiro');
+        $products->setName('Bermuda');
         $cart = new Cart;
         $cart->add($products);
 
         $this->assertCount(1, $cart->getCart());
     }
 
-    public function test_exist_more_than_one_product(){
+    public function test_exist_more_than_one_product()
+    {
         $productA = new Products;
         $productB = new Products;
-        $productA->setName('Isqueiro');
-        $productB->setName('Seda');
+        $productA->setName('Bermuda');
+        $productB->setName('Camisa');
         $cart = new Cart;
         $cart->add($productA);
         $cart->add($productB);
@@ -35,16 +37,16 @@ class CartTest extends TestCase
         $this->assertCount(2, $cart->getCart());
     }
 
-    public function test_if_clean_cart(){
+    public function test_if_clean_cart()
+    {
         $products = new Products;
-        $products->setName('Isqueiro');
+        $products->setName('Bermuda');
         $cart = new Cart;
         $cart->add($products);
-       
+
         $this->assertCount(1, $cart->getCart());
 
         $cart->clean();
         $this->assertCount(0, $cart->getCart());
-        
     }
 }
