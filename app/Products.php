@@ -4,14 +4,14 @@ namespace app;
 
 class Products
 {
-    private string $name;
+    private array $product = [];
 
-    public function setName(string $name)
+    public function setItem(string $name)
     {
-        $this->name = $name;
+        $this->product[] = $name;
     }
-    public function getName()
+    public function getItem()
     {
-        return $this->name;
+        return $this->product;
     }
 }
