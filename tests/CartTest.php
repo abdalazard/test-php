@@ -16,10 +16,10 @@ class CartTest extends TestCase
 
     public function test_if_exist_product_in_cart()
     {
-        $products = new Products;
-        $products->setName('Bermuda');
+        $product = new Products;
+        $product->setName('Bermuda');
         $cart = new Cart;
-        $cart->add($products);
+        $cart->add($product);
 
         $this->assertCount(1, $cart->getCart());
     }
@@ -39,10 +39,10 @@ class CartTest extends TestCase
 
     public function test_if_clean_cart()
     {
-        $products = new Products;
-        $products->setName('Bermuda');
+        $product = new Products;
+        $product->setName('Bermuda');
         $cart = new Cart;
-        $cart->add($products);
+        $cart->add($product);
 
         $this->assertCount(1, $cart->getCart());
 
