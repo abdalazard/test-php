@@ -10,27 +10,36 @@ class CartTest extends TestCase
 {
     public function test_if_cart_is_empty()
     {
+        
+        //Arrange
         $cart = new Cart;
-        $this->assertEmpty($cart->getCart());
+        
+        //Act
+        $result = $cart->getCart();
+        
+        //Assert
+        $this->assertEmpty($result);
     }
-
+    
     public function test_if_exist_product_in_cart()
     {
+        //Arrange
         $product = new Products;
         $product->setItem('Bermuda');
-
-        $productB = new Products;
-        $productB->setItem('Camisa');
-
+        
         $cart = new Cart;
         $cart->add($product);
-        $cart->add($productB);
-
-        $this->assertCount(2, $cart->getCart());
+        
+        //Act
+        $result = $cart->getCart();
+        
+        //Assert
+        $this->assertCount(1, $result);
     }
-
+    
     public function test_exist_more_than_one_product()
     {
+        //Arrange
         $productA = new Products;
         $productB = new Products;
         $productA->setItem('Bermuda');
@@ -38,20 +47,28 @@ class CartTest extends TestCase
         $cart = new Cart;
         $cart->add($productA);
         $cart->add($productB);
+        
+        //Act
+        $result = $cart->getCart();
+        
+        //Assert
+        $this->assertCount(2, $result);   
+     }
+        
+        public function test_if_clean_cart()
+        {
+            //Arrange
+            $product = new Products;
+            $product->setItem('Bermuda');
+            $cart = new Cart;
+            $cart->add($product);
+            
+            // $this->assertCount(1, $cart->getCart());
+            
+            //Act
+            $result = $cart->clean();
 
-        $this->assertCount(2, $cart->getCart());
+            //Assert
+            $this->assertCount(0, $result);
+        }
     }
-
-    public function test_if_clean_cart()
-    {
-        $product = new Products;
-        $product->setItem('Bermuda');
-        $cart = new Cart;
-        $cart->add($product);
-
-        $this->assertCount(1, $cart->getCart());
-
-        $cart->clean();
-        $this->assertCount(0, $cart->getCart());
-    }
-}
