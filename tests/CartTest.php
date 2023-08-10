@@ -37,7 +37,7 @@ class CartTest extends TestCase
         $this->assertCount(1, $result);
     }
     
-    public function test_exist_more_than_one_product()
+    public function test_exist_more_than_one_product_in_cart()
     {
         //Arrange
         $productA = new Products;
@@ -55,7 +55,7 @@ class CartTest extends TestCase
         $this->assertCount(2, $result);   
      }
         
-        public function test_if_clean_cart()
+        public function test_if_cart_is_clean()
         {
             //Arrange
             $product = new Products;
